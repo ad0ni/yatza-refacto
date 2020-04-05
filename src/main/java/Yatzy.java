@@ -1,5 +1,20 @@
 public class Yatzy {
 
+    protected int[] dice;
+
+    public Yatzy(int d1, int d2, int d3, int d4, int _5)
+    {
+        dice = new int[5];
+        dice[0] = d1;
+        dice[1] = d2;
+        dice[2] = d3;
+        dice[3] = d4;
+        dice[4] = _5;
+    }
+
+    /**
+     * Return the sum of dice values in inputs.
+     */
     public static int chance(int d1, int d2, int d3, int d4, int d5)
     {
         int total = 0;
@@ -11,6 +26,9 @@ public class Yatzy {
         return total;
     }
 
+    /**
+     * Return 50 if a value is rolled 5 times. Otherwise, 0.
+     */
     public static int yatzy(int... dice)
     {
         int[] counts = new int[6];
@@ -22,6 +40,9 @@ public class Yatzy {
         return 0;
     }
 
+    /**
+     * For each time the number 1 is rolled, add one to the result value.
+     */
     public static int ones(int d1, int d2, int d3, int d4, int d5) {
         int sum = 0;
         if (d1 == 1) sum++;
@@ -34,6 +55,9 @@ public class Yatzy {
         return sum;
     }
 
+    /**
+     * For each time the number 2 is rolled, add 2 to the result value.
+     */
     public static int twos(int d1, int d2, int d3, int d4, int d5) {
         int sum = 0;
         if (d1 == 2) sum += 2;
@@ -44,6 +68,9 @@ public class Yatzy {
         return sum;
     }
 
+    /**
+     * For each time the number 3 is rolled, add 3 to the result value.
+     */
     public static int threes(int d1, int d2, int d3, int d4, int d5) {
         int s;
         s = 0;
@@ -55,17 +82,9 @@ public class Yatzy {
         return s;
     }
 
-    protected int[] dice;
-    public Yatzy(int d1, int d2, int d3, int d4, int _5)
-    {
-        dice = new int[5];
-        dice[0] = d1;
-        dice[1] = d2;
-        dice[2] = d3;
-        dice[3] = d4;
-        dice[4] = _5;
-    }
-
+    /**
+     * For each time the number 4 is rolled, add 4 to the result value.
+     */
     public int fours()
     {
         int sum;
@@ -78,6 +97,9 @@ public class Yatzy {
         return sum;
     }
 
+    /**
+     * For each time the number 5 is rolled, add 5 to the result value.
+     */
     public int fives()
     {
         int s = 0;
@@ -88,6 +110,9 @@ public class Yatzy {
         return s;
     }
 
+    /**
+     * For each time the number 6 is rolled, add 6 to the result value.
+     */
     public int sixes()
     {
         int sum = 0;
@@ -97,6 +122,9 @@ public class Yatzy {
         return sum;
     }
 
+    /**
+     * Return the biggest number which is diced twices multiply by 2.
+     */
     public static int score_pair(int d1, int d2, int d3, int d4, int d5)
     {
         int[] counts = new int[6];
@@ -112,6 +140,9 @@ public class Yatzy {
         return 0;
     }
 
+    /**
+     * If there is 2 numbers diced twices, return their value multiply by 2. Otherwise return 0.
+     */
     public static int two_pair(int d1, int d2, int d3, int d4, int d5)
     {
         int[] counts = new int[6];
@@ -133,6 +164,9 @@ public class Yatzy {
             return 0;
     }
 
+    /**
+     * If a number is diced 4 times, return its value multiply by 4. Otherwise return 0.
+     */
     public static int four_of_a_kind(int _1, int _2, int d3, int d4, int d5)
     {
         int[] tallies;
@@ -148,6 +182,9 @@ public class Yatzy {
         return 0;
     }
 
+    /**
+     * If a number is diced 3 times, return its value multiply by 3. Otherwise return 0.
+     */
     public static int three_of_a_kind(int d1, int d2, int d3, int d4, int d5)
     {
         int[] t;
@@ -163,6 +200,9 @@ public class Yatzy {
         return 0;
     }
 
+    /**
+     * Return 15 if each value from 1 to 5 is diced 1 time.
+     */
     public static int smallStraight(int d1, int d2, int d3, int d4, int d5)
     {
         int[] tallies;
@@ -181,6 +221,9 @@ public class Yatzy {
         return 0;
     }
 
+    /**
+     * Return 20 if each value from 2 to 6 is diced 1 time.
+     */
     public static int largeStraight(int d1, int d2, int d3, int d4, int d5)
     {
         int[] tallies;
@@ -199,6 +242,10 @@ public class Yatzy {
         return 0;
     }
 
+    /**
+     *  If 1 number is diced 2 times and another is diced 3 times, return the sum of the first multiply by 2 and the
+     *  second multiply by 3. Otherwise return 0.
+     */
     public static int fullHouse(int d1, int d2, int d3, int d4, int d5)
     {
         int[] tallies;
